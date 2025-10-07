@@ -215,11 +215,11 @@ body::before {
     color: var(--maroon);
     margin-bottom: 2rem;
     position: relative;
-    display: inline-block;
+    display: block;
+    text-align: center;
 }
 
-.section-title::before,
-.section-title::after {
+.section-title::before {
     content: '🪔';
     position: absolute;
     font-size: 1.5rem;
@@ -284,10 +284,15 @@ body::before {
     background-color: rgba(245, 240, 232, 0.6);
 }
 
+.details {
+    text-align: center;
+}
+
 .details-grid {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
+    text-align: left;
 }
 
 .detail-card {
@@ -297,23 +302,62 @@ body::before {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
 }
 
+.detail-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
 .detail-icon {
-    font-size: 2rem;
-    margin-bottom: 0.75rem;
-    background-color: var(--light-cream);
-    width: 60px;
-    height: 60px;
+    font-size: 1.3rem;
+    background: linear-gradient(135deg, var(--maroon) 0%, var(--terracotta) 100%);
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
+    color: white;
+    box-shadow: 0 4px 15px rgba(166, 58, 80, 0.3);
+    position: relative;
+    font-weight: 600;
+    flex-shrink: 0;
+}
+
+.detail-icon::before {
+    content: '';
+    position: absolute;
+    inset: 3px;
+    border-radius: 50%;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Custom icon styles */
+.icon-location {
+    font-size: 2rem;
+    font-weight: 400;
+    line-height: 1;
+}
+
+.icon-parking {
+    font-size: 1.6rem;
+    font-weight: 800;
+    font-family: 'Arial', sans-serif;
+    line-height: 1;
+}
+
+.icon-dresscode {
+    font-size: 1.8rem;
+    font-weight: 400;
+    line-height: 1;
 }
 
 .detail-title {
     font-family: 'Playfair Display', serif;
     font-size: 1.5rem;
     color: var(--maroon);
-    margin-bottom: 1rem;
+    margin: 0;
 }
 
 .detail-content {
@@ -373,6 +417,10 @@ body::before {
     background-color: rgba(250, 248, 243, 0.65);
 }
 
+.rsvp {
+    text-align: center;
+}
+
 .rsvp-deadline {
     background-color: var(--light-cream);
     border: 2px solid var(--maroon);
@@ -382,10 +430,9 @@ body::before {
     text-align: center;
     font-weight: 700;
     font-size: 1rem;
-    margin-bottom: 1rem;
-    display: inline-block;
-    margin-left: 50%;
-    transform: translateX(-50%);
+    margin: 0 auto 1rem auto;
+    display: block;
+    max-width: fit-content;
 }
 
 .rsvp-subtitle {
@@ -400,6 +447,7 @@ body::before {
     padding: 2rem 1.5rem;
     border-radius: 12px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    text-align: left;
 }
 
 .form-group {
